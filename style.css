@@ -1,0 +1,849 @@
+/* ===================================================
+   PARA MARIANA ❤️
+   Creado con mucho cariño
+=================================================== */
+
+/* ===========================
+        RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#090d1d;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+.photo img{
+
+    width:250px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+#gallery{
+
+    text-align:center;
+
+    padding:120px 0;
+
+}
+
+#gallery h2{
+
+    font-size:55px;
+
+    margin-bottom:50px;
+
+    color:#ff8fb3;
+
+}
+
+.slider{
+
+    width:80%;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.slides{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+}
+
+.slide{
+
+    display:none;
+
+    animation:fade .8s;
+
+}
+
+.slide.active{
+
+    display:block;
+
+}
+
+.slide img{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:contain;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+.slide p{
+
+    margin-top:25px;
+
+    font-size:28px;
+
+    color:white;
+
+}
+
+.prev,
+.next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    border:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    background:rgba(255,255,255,.2);
+
+    backdrop-filter:blur(10px);
+
+    color:white;
+
+}
+
+.prev{
+
+    left:-80px;
+
+}
+
+.next{
+
+    right:-80px;
+
+}
+
+.prev:hover,
+.next:hover{
+
+    background:#ff6b9d;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* Bloquear el scroll al cargar */
+
+body.lock-scroll{
+
+    overflow:hidden;
+
+}
+
+/* La primera pantalla ocupa toda la ventana */
+
+#home{
+
+    height:100vh;
+
+}
+
+/* ===========================
+        SCROLL
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff6b9d;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#ff4f89;
+
+}
+
+/* ===========================
+        FONDO
+=========================== */
+
+body{
+
+background:linear-gradient(
+180deg,
+#07111d,
+#091b2b,
+#10253b,
+#081322,
+#050812);
+
+min-height:100vh;
+
+}
+
+/* ===========================
+        ESTRELLAS
+=========================== */
+
+#stars{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:-3;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(white 1px,transparent 1px);
+
+background-size:
+
+250px 250px,
+180px 180px,
+120px 120px;
+
+opacity:.4;
+
+animation:starsMove 90s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-400px);
+
+}
+
+}
+
+/* ===========================
+        CORAZONES
+=========================== */
+
+#hearts{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+/* ===========================
+        SECCIONES
+=========================== */
+
+section{
+
+width:100%;
+
+padding:120px 10%;
+
+position:relative;
+
+}
+
+/* ===========================
+        HERO
+=========================== */
+
+#home{
+
+height:100vh;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+position:relative;
+
+}
+
+/* Capa oscura */
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+left:0;
+
+top:0;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(2px);
+
+}
+
+/* Caja principal */
+
+.hero{
+
+position:relative;
+
+z-index:2;
+
+padding:60px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 0 40px rgba(255,105,180,.15);
+
+max-width:900px;
+
+}
+
+/* Texto pequeño */
+
+.hero h3{
+
+font-size:24px;
+
+font-weight:300;
+
+letter-spacing:2px;
+
+margin-bottom:20px;
+
+color:#ffe1ea;
+
+}
+
+/* Nombre */
+
+.hero h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:90px;
+
+margin-bottom:25px;
+
+color:#ff8fb3;
+
+text-shadow:
+
+0 0 15px rgba(255,150,180,.6);
+
+}
+
+/* Frase */
+
+.hero p{
+
+font-size:22px;
+
+line-height:38px;
+
+color:#eee;
+
+margin-bottom:45px;
+
+}
+
+/* ===========================
+        BOTÓN
+=========================== */
+
+button{
+
+cursor:pointer;
+
+border:none;
+
+padding:18px 45px;
+
+border-radius:40px;
+
+font-size:18px;
+
+font-weight:600;
+
+transition:.35s;
+
+background:#ff6b9d;
+
+color:white;
+
+box-shadow:
+
+0 10px 25px rgba(255,105,180,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-6px);
+
+background:#ff4d88;
+
+box-shadow:
+
+0 15px 40px rgba(255,105,180,.55);
+
+}
+
+/* ===========================
+        CARTA
+=========================== */
+
+#letter{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+}
+
+.envelope{
+
+position:relative;
+
+width:850px;
+
+max-width:95%;
+
+}
+
+/* Hoja */
+
+.paper{
+
+background:white;
+
+color:#333;
+
+padding:70px;
+
+border-radius:25px;
+
+box-shadow:
+
+0 20px 70px rgba(0,0,0,.35);
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* Título */
+
+.paper h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:35px;
+
+color:#ff5a8c;
+
+}
+
+/* Texto */
+
+.paper p{
+
+font-size:20px;
+
+line-height:42px;
+
+text-align:justify;
+
+white-space:pre-line;
+
+}
+
+/* Sobre */
+
+.paper{
+
+    max-height:250px;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+}
+
+
+
+/* Clase que abrirá JS */
+
+.envelope.open .cover{
+
+transform:rotateX(180deg);
+
+}
+
+/* ===========================
+        ANIMACIONES
+=========================== */
+
+.hero{
+
+animation:fadeUp 1.4s ease;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==========================
+      Botón continuar
+==========================*/
+
+#nextSection{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:60px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+#nextSection.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+#continueBtn{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff5c93,#ff8fb3);
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(255,92,147,.4);
+
+}
+
+#continueBtn:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 15px 40px rgba(255,92,147,.6);
+
+}
+
+/* Animación de rebote */
+
+.bounce {
+
+    animation: bounce .7s ease;
+
+}
+
+@keyframes bounce {
+
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.25);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    70% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+#ending{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:linear-gradient(180deg,#0f172a,#1e293b,#000);
+
+}
+
+.ending-content{
+
+    max-width:800px;
+
+    padding:30px;
+
+}
+
+.ending-content h1{
+
+    font-size:70px;
+
+    color:white;
+
+    margin-bottom:40px;
+
+}
+
+.ending-content p{
+
+    font-size:28px;
+
+    color:#f3f3f3;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+
+}
+
+.ending-content span{
+
+    font-size:24px;
+
+    color:#ffb6c1;
+
+}
+
+.paper{
+
+    background:white;
+    color:#333;
+    padding:70px;
+    border-radius:25px;
+    box-shadow:0 20px 70px rgba(0,0,0,.35);
+
+    max-height:80vh;
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+
+}
+
+@keyframes appear{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================
+      Corazones flotando
+========================== */
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(0) scale(.5);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) scale(1.5);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+      Scroll Animation
+========================== */
+
+section{
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    transition:1.2s;
+
+}
+
+section.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
